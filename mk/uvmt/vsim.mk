@@ -33,8 +33,11 @@ VCOVER                  = vcover
 # Paths
 VWORK                   = work
 VSIM_COV_MERGE_DIR      = $(SIM_CFG_RESULTS)/merged
-UVM_HOME                ?= $(abspath $(shell which $(VLIB))/../../verilog_src/uvm-1.2/src)
-DPI_INCLUDE             ?= $(abspath $(shell which $(VLIB))/../../include)
+DPI_INCLUDE             ?= /sw/CAD/Siemens/questa/2024.3/questasim
+						 # $(abspath $(shell which $(VLIB))/../../include)
+UVM_HOME                ?= $(DPI_INCLUDE)/verilog_src/uvm-1.2/src
+						 # $(abspath $(shell which $(VLIB))/../../verilog_src/uvm-1.2/src)
+
 USES_DPI = 1
 
 # Default flags
