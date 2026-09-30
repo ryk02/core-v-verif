@@ -16,7 +16,7 @@
 # SPDX-License-Identifier:Apache-2.0 WITH SHL-2.0
 
 name: fpu_bugs_test
-uvm_test: uvmt_cv32e40p_firmware_test_c
+uvm_test: uvmt_cv32e40px_firmware_test_c
 default_cflags: >
     -O3 -g -static -mabi=ilp32 -march=$(RISCV_MARCH) -Wall -pedantic
 description: >
