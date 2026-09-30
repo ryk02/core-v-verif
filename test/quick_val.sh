@@ -260,7 +260,6 @@ SUB=$(dirname "$SELF_DIR")
 CVV=$(cd "$SUB/../.." && pwd)
 UVMT="$CVV/cv32e40px/sim/uvmt"
 OUT=/srv/home/riccardo.giani/core-v-verif/cv32e40px/tmp/gvsoc_rvvi_quickval_$(date +%Y%m%d_%H%M%S)
-# /tmp/gvsoc_rvvi_quickval_$(date +%Y%m%d_%H%M%S)
 if [ $# -gt 0 ]; then OUT=$1; shift; fi
 CFGS=${*:-default pulp pulp_fpu pulp_fpu_zfinx}
 # ${*:-default pulp pulp_fpu pulp_fpu_zfinx}
