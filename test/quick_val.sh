@@ -258,10 +258,12 @@ set -o pipefail
 SELF_DIR=$(cd "$(dirname "$0")" && pwd)
 SUB=$(dirname "$SELF_DIR")
 CVV=$(cd "$SUB/../.." && pwd)
-UVMT="$CVV/cv32e40p/sim/uvmt"
-OUT=/tmp/gvsoc_rvvi_quickval_$(date +%Y%m%d_%H%M%S)
+UVMT="$CVV/cv32e40px/sim/uvmt"
+OUT=/srv/home/riccardo.giani/core-v-verif/cv32e40px/tmp/gvsoc_rvvi_quickval_$(date +%Y%m%d_%H%M%S)
+# /tmp/gvsoc_rvvi_quickval_$(date +%Y%m%d_%H%M%S)
 if [ $# -gt 0 ]; then OUT=$1; shift; fi
 CFGS=${*:-default pulp pulp_fpu pulp_fpu_zfinx}
+# ${*:-default pulp pulp_fpu pulp_fpu_zfinx}
 mkdir -p "$OUT" || { echo "cannot create output dir $OUT" >&2; exit 1; }
 
 if ! command -v vsim > /dev/null 2>&1; then
@@ -478,7 +480,7 @@ run_one() {
                 extra=${extra//TMO=$tmo/};;
     esac
     local t0=$(date +%s)
-    eval timeout $tmo make $gen test COREV=YES TEST=$tc CV_CORE=cv32e40p \
+    eval timeout $tmo make $gen test COREV=YES TEST=$tc CV_CORE=cv32e40px \
         CFG=$cfg COREV=1 SIMULATOR=vsim COMP=0 USE_ISS=YES ISS=GVSOC COV=NO \
         SEED=${QV_SEED:-1} GEN_START_INDEX=0 RUN_INDEX=0 TEST_CFG_FILE= ENABLE_TRACE_LOG=NO \
         $extra \
@@ -505,7 +507,7 @@ sweep_cfg() {
     mkdir -p "$OUT/$cfg" || { echo "cannot create $OUT/$cfg" >> "$OUT/SUMMARY.txt"; FAIL=$((FAIL+1)); return 1; }
     echo "=== CFG=$cfg compile ===" >> "$OUT/SUMMARY.txt"
     local t0=$(date +%s)
-    make comp comp_corev-dv CV_CORE=cv32e40p CFG=$cfg SIMULATOR=vsim \
+    make comp comp_corev-dv CV_CORE=cv32e40px CFG=$cfg SIMULATOR=vsim \
         USE_ISS=YES ISS=GVSOC COV=NO \
         > "$OUT/$cfg/comp.log" 2>&1
     local rc=$?

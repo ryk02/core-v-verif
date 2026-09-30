@@ -15,7 +15,8 @@
 # The Python generators (cv32e40p-v2-standalone*.py, cv32e40p_exit/) live in the
 # gvsoc/pulp/ submodule and are installed by 'make gvsoc'.
 
-QUESTA_HOME ?= /tools/siemens/questa_2025.3/questasim
+QUESTA_HOME ?= /sw/CAD/Siemens/questa/2024.3/questasim
+             # /tools/siemens/questa_2025.3/questasim
 GVSOC_HOME  := $(abspath gvsoc)
 RVVI_DIR    := $(abspath RVVI)
 
