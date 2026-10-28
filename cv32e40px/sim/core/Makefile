@@ -49,7 +49,7 @@ CORE_V_VERIF   = $(abspath $(MAKE_PATH)/../../..)
 DATE           = $(shell date +%F)
 WAVES          = 0
 
-CV_CORE       ?= CV32E40P
+CV_CORE       ?= CV32E40PX
 CV_CORE_LC     = $(shell echo $(CV_CORE) | tr A-Z a-z)
 CV_CORE_UC     = $(shell echo $(CV_CORE) | tr a-z A-Z)
 
@@ -186,7 +186,7 @@ TBSRC_TOP   := $(TBSRC_HOME)/core/tb_top.sv
 TBSRC_CORE  := $(TBSRC_HOME)/core
 TBSRC_PKG   := $(TBSRC_CORE)/tb_riscv/include/perturbation_defines.sv
 TBSRC       := $(TBSRC_CORE)/tb_top.sv \
-               $(TBSRC_CORE)/cv32e40p_core_tb_wrapper.sv \
+               $(TBSRC_CORE)/cv32e40px_core_tb_wrapper.sv \
                $(TBSRC_CORE)/mm_ram.sv \
                $(TBSRC_CORE)/dp_ram.sv \
                $(TBSRC_CORE)/tb_riscv/riscv_random_stall.sv \
@@ -200,7 +200,7 @@ RTLSRC_VLOG_TB_TOP	:= $(basename $(notdir $(TBSRC_TOP)))
 RTLSRC_VOPT_TB_TOP	:= $(addsuffix _vopt, $(RTLSRC_VLOG_TB_TOP))
 
 TBSRC_VERI  := $(TBSRC_CORE)/tb_top_verilator.sv \
-               $(TBSRC_CORE)/cv32e40p_core_tb_wrapper.sv \
+               $(TBSRC_CORE)/cv32e40px_core_tb_wrapper.sv \
                $(TBSRC_CORE)/tb_riscv/riscv_rvalid_stall.sv \
                $(TBSRC_CORE)/tb_riscv/riscv_gnt_stall.sv \
                $(TBSRC_CORE)/mm_ram.sv \
@@ -220,7 +220,7 @@ CV_CORE_RTLSRC  := $(filter-out $(CV_CORE_PKG)/rtl/$(CV_CORE_LC)_register_file_l
 # FIXME: temporarily using a local manifest for the core.
 #        This is BAD PRACTICE and will be fixed with
 #        https://github.com/openhwgroup/CV_CORE/pull/421 is resolved.
-CV_CORE_MANIFEST    := $(CV_CORE_PKG)/cv32e40p_manifest.flist
+CV_CORE_MANIFEST    := $(CV_CORE_PKG)/cv32e40px_manifest.flist
 export DESIGN_RTL_DIR = $(CV_CORE_PKG)/rtl
 
 # Shorthand rules for convience
