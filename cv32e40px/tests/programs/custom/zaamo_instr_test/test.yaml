@@ -1,0 +1,4 @@
+name: zaamo_instr_test
+uvm_test: uvmt_$(CV_CORE_LC)_firmware_test_c
+description: >
+  Self-checking test for atomic instructions belonging to the RV32A Zaamo Extension
