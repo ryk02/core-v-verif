@@ -174,6 +174,7 @@ module uvmt_cv32e40p_dut_wrap
          .data_addr_o            ( obi_memory_data_if.addr        ),
          .data_wdata_o           ( obi_memory_data_if.wdata       ),
          .data_rdata_i           ( obi_memory_data_if.rdata       ),
+         .data_atop_o            ( obi_memory_data_if.atop        ),
 
          .irq_i                  ( irq                            ),
          .irq_ack_o              ( irq_ack                        ),
