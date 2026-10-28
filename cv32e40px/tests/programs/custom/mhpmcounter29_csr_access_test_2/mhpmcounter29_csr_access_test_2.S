@@ -42,7 +42,7 @@ _start_main:
 #define ADD_X(val) ((val) | (1 << 23))
 #define ADD_F(val) ((val) | (1 <<  5))
 
-#define BASE_MISA 0x40001104
+#define BASE_MISA 0x40001105
 
 #if defined(NO_PULP)
 #define EXP_MISA BASE_MISA

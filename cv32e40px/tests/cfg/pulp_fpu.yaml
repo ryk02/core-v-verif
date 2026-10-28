@@ -3,7 +3,7 @@ description: Sets PULP instructions and FPU parameters to 1
 compile_flags:
     +define+PULP +define+FPU
 ovpsim: >
-    --override cpu/misa_Extensions=0x001104
+    --override cpu/misa_Extensions=0x001105
     --override cpu/compress_version=1.0.0-RC5.7
     --override cpu/show_c_prefix=T
     --override cpu/noinhibit_mask=0xFFFFFFF0
@@ -19,6 +19,6 @@ ovpsim: >
     -showinstanceparams cpu
 # Debug options (add to ovpsim section as needed)
 #    --trace --tracechange --traceshowicount --tracemode --monitornets
-cv_sw_march: rv32imfc_zicsr_zifencei_xcvhwlp_xcvmem_xcvmac_xcvbi_xcvalu_xcvsimd_xcvbitmanip
+cv_sw_march: rv32imafc_zicsr_zifencei_xcvhwlp_xcvmem_xcvmac_xcvbi_xcvalu_xcvsimd_xcvbitmanip
 cflags: >
     -DPULP -DFPU -DCOREV_PULP

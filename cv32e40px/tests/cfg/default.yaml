@@ -3,7 +3,7 @@ description: Default configuration for CV32E40P simulations
 compile_flags:
     +define+NO_PULP
 ovpsim: >
-    --override cpu/misa_Extensions=0x001104
+    --override cpu/misa_Extensions=0x001105
     --override cpu/compress_version=1.0.0-RC5.7
     --override cpu/show_c_prefix=T
     --override cpu/noinhibit_mask=0xFFFFFFF0
@@ -14,6 +14,6 @@ ovpsim: >
     -showinstanceparams cpu
 # Debug options (add to ovpsim section as needed)
 #    --trace --tracechange --traceshowicount --tracemode --monitornets
-cv_sw_march: rv32imc_zicsr_zifencei
+cv_sw_march: rv32imac_zicsr_zifencei
 cflags: >
     -DNO_PULP

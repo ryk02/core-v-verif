@@ -16,16 +16,16 @@
 #if defined(PULP)
 	#if defined(FPU) && !defined(ZFINX)
 		#define HAS_FPU 1
-		#define EXP_MISA 0x40801124
+		#define EXP_MISA 0x40801125
 		#define MSTATUS_MASK 0x00006088
 	#else
 		#define HAS_FPU 0
-		#define EXP_MISA 0x40801104
+		#define EXP_MISA 0x40801105
 		#define MSTATUS_MASK 0x00000088
 	#endif
 #else
 #define HAS_FPU 0
-#define EXP_MISA 0x40001104
+#define EXP_MISA 0x40001105
 #define MSTATUS_MASK 0x00000088
 #endif
 

@@ -345,7 +345,7 @@ else
 ifdef  CFG_CV_SW_MARCH
 CV_SW_MARCH = $(CFG_CV_SW_MARCH)
 else
-CV_SW_MARCH = rv32imc_zicsr_zifencei
+CV_SW_MARCH = rv32imac_zicsr_zifencei
 $(warning CV_SW_MARCH not defined in either the shell environment, test.yaml or cfg.yaml)
 endif
 endif

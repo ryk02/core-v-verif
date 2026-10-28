@@ -16,9 +16,9 @@ _start:
 _start_main:
 
 	#ifdef NO_PULP
-	#define EXP_MISA 0x40001104
+	#define EXP_MISA 0x40001105
 	#else
-	#define EXP_MISA 0x40801104
+	#define EXP_MISA 0x40801105
 	#endif
 
 ###############################################################################

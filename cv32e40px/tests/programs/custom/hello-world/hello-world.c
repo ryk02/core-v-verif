@@ -30,14 +30,14 @@
 //FIXME: the core tb does not have the ability to select PULP/NO_PULP at
 //       compile-time, so we set a default MISA to NO_PULP value.  This
 //       needs to be fixed, but for now does not affect UVM env.
-#define EXP_MISA 0x40001104
+#define EXP_MISA 0x40001105
 #define EXP_MIMPID 0x0
 
 #if defined(PULP) || defined(CLUSTER)
 #if defined(FPU) && !defined(ZFINX)
-#define EXP_MISA 0x40801124
+#define EXP_MISA 0x40801125
 #else
-#define EXP_MISA 0x40801104
+#define EXP_MISA 0x40801105
 #endif
 #endif
 
