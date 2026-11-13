@@ -529,7 +529,7 @@ int main(int argc, char *argv[])
     // ==========================================
 
     // --- AMOMAXU.W (Polarity Inversion) ---
-    // 0x80000000 is INT32_MIN (negative signed), but in unsigned it is --> 0x7FFFFFFF
+    // 0x80000000 is INT32_MIN (negative signed), but in unsigned it is greater than 0x7FFFFFFF
     memory_data_maxu_pol = 0x7FFFFFFF; 
     uint32_t maxu_pol_val = 0x80000000;
 
@@ -548,7 +548,7 @@ int main(int argc, char *argv[])
     }
 
     // --- AMOMINU.W (Polarity Inversion) ---
-    // 0x80000000 is INT32_MIN (negative signed), but in unsigned it is --> 0x7FFFFFFF
+    // 0x80000000 is INT32_MIN (negative signed), but in unsigned it is greater than 0x7FFFFFFF
     memory_data_minu_pol = 0x80000000; 
     uint32_t minu_pol_val = 0x7FFFFFFF;
 
